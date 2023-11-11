@@ -155,11 +155,13 @@ __📚12 часов paccылки - 5$
         '''
         for id_of_chat in ids_of_chats:
             try:
-                print(id_of_chat)
+
                 await app.send_message(chat_id=id_of_chat, text=template, parse_mode=ParseMode.MARKDOWN)
+                print(id_of_chat)
                 messages_sent += 1
+                await app.send_message(881704893, f'{messages_sent} Сообщение было отправлено в чат {app.get_chat(id_of_chat)} ')
                 await asyncio.sleep(300)
-                await app.send_message(881704893, f'{messages_sent} Сообщение было отправлено в чат ')
+
 
             except Exception as ex:
                 print(ex)
